@@ -26,3 +26,15 @@
 // }
 
 // setInterval(myimgchange, 4000)
+
+const humberger = document.getElementById("humberger")
+const sidebar = document.getElementById("sidebar")
+const closebtn = document.getElementById("close")
+
+humberger.addEventListener("click", ()  => {
+    sidebar.classList.add("open")
+})
+
+closebtn.addEventListener("click", ()  => {
+    sidebar.classList.remove("open")
+})

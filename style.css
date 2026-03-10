@@ -36,6 +36,10 @@ header {
     gap: 20px;
 }
 
+.header-body .logo h2 {
+    font-size: 1rem;
+}
+
 .header-body nav {
     display: flex;
     align-items: center;
@@ -51,6 +55,18 @@ header {
     font-size: 0.8rem;
 }
 
+.humberger {
+    display: none;
+    transform: rotate(-450deg);
+    gap: 4px;
+}
+
+.humberger span {
+    height: 30px;
+    width: 4px;
+    background-color: #000;
+}
+
 .header-body nav ul li a {
     text-decoration: none;
     color: #000;
@@ -64,6 +80,10 @@ header {
     color: white;
     font-family: "Krona One", sans-serif;
     font-size: 0.8rem;
+}
+
+.sidebar {
+    display: none;
 }
 
 
@@ -423,7 +443,7 @@ P {
 
 
 /* WHY US SECTION */
-.pution{
+.pution {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -500,7 +520,7 @@ P {
 }
 
 .content-steps {
-   background: #f3f3f3;
+    background: #f3f3f3;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -510,7 +530,7 @@ P {
     width: auto;
     background-image: url(imgslider/download.png);
     background-repeat: no-repeat;
-    background-size: cover  ;
+    background-size: cover;
     background-position: center;
 }
 
@@ -685,7 +705,7 @@ P {
 
     .container {
         height: auto;
-        padding-top: 5rem;
+        padding-top: 7rem;
     }
 
     .con-body {
@@ -727,11 +747,11 @@ P {
         display: block !important;
     }
 
-    .pution{
+    .pution {
         height: auto;
     }
 
-    .steps-content-body{
+    .steps-content-body {
         width: 90%;
     }
 
@@ -740,7 +760,9 @@ P {
 
 /* MOBILE */
 @media (max-width: 600px) {
-    .header-body nav ul {
+
+    .header-body nav ul,
+    button {
         display: none;
     }
 
@@ -775,37 +797,42 @@ P {
         height: auto;
     }
 
-    
-    .why-grid{
+
+    .why-grid {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
         height: auto;
     }
 
-    .why-box{
+    .why-box {
         grid-column: 1 / -1;
     }
-    .footer-grid{
+
+    .footer-grid {
         grid-template-columns: 1;
         grid-template-rows: auto;
     }
 
-    .footer-about, .footer-links, .footer-contact{
+    .footer-about,
+    .footer-links,
+    .footer-contact {
         grid-column: 1 / -1;
         grid-row: auto;
     }
 
-    .steps{
+    .steps {
         height: auto;
         padding: 50px 0px 50px 0px;
     }
 
-    .steps-content-body, .steps-body{
+    .steps-content-body,
+    .steps-body {
         grid-template-columns: 1;
         grid-template-rows: auto;
     }
-   
-    .content-steps, .steps-body{
+
+    .content-steps,
+    .steps-body {
         grid-column: 1 / -1;
         grid-row: auto;
     }
@@ -813,87 +840,167 @@ P {
 }
 
 @media (max-width: 456px) {
-    .con-body{
+    .humberger {
+        display: flex;
+    }
+
+    .close {
+        position: fixed;
+        top: 3%;
+        left: 4%;
+    }
+
+    .sidebar {
+        position: fixed;
+        display: flex;
+        transform: translateX(100%);
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 80%;
+        z-index: 999999;
+        visibility: hidden;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background-color: #ffffff;
+        transition: transform 0.5s ease;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .sidebar.open {
+        visibility: visible;
+        transition: transform 0.5s ease;
+        transform: translateX(0);
+    }
+
+
+    .sidebar .navlinks {
+        width: 90%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 5rem;
+        padding-left: 1rem;
+    }
+
+    .sidebar .navlinks .list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sidebar .navlinks .list li {
+        list-style: none;
+    }
+
+    .sidebar .navlinks .list li a {
+        text-decoration: none;
+        font-family: "Krona One", sans-serif;
+        font-size: 0.8rem;
+        color: #000;
+    }
+
+
+    .header-body .logo svg {
+        display: none;
+    }
+
+    .con-body {
         grid-template-columns: 1;
         grid-template-rows: auto;
     }
 
-        .con3-body p {
+    .con3-body p {
         font-size: 1rem;
     }
 
-    .content2 img{
-        height: auto;
-    }
 
-    .content1,
-    .content2,
     .content3,
     .content4,
     .content5,
     .content6,
-    .content7{
+    .content7 {
         grid-column: 1 / -1;
-        grid-row: auto  ;
+        grid-row: auto;
         height: auto;
-    }
-
-    .content8, .content9, .content10{
         display: none;
     }
 
-    .pution{
+    .content1,
+    .content2 {
+        grid-column: 1 / -1;
+        grid-row: auto;
         height: auto;
     }
 
-    .why-grid{
+
+    .content2 img {
+        height: 200px;
+    }
+
+    .content8,
+    .content9,
+    .content10 {
+        display: none;
+    }
+
+    .pution {
+        height: auto;
+    }
+
+    .why-grid {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(4, 1fr);
         height: auto;
     }
 
-    .why-box{
+    .why-box {
         grid-column: 1 / -1;
     }
-    .footer-grid{
+
+    .footer-grid {
         grid-template-columns: 1;
         grid-template-rows: auto;
     }
 
-    .footer-about, .footer-links, .footer-contact{
+    .footer-about,
+    .footer-links,
+    .footer-contact {
         grid-column: 1 / -1;
         grid-row: auto;
     }
 
-    .steps{
+    .steps {
         height: auto;
         padding: 60px 0px 60px 0px;
     }
 
-    .content-steps{
+    .content-steps {
         height: 350px;
     }
 
-    .steps-content-body, .steps-body{
+    .steps-content-body,
+    .steps-body {
         grid-template-columns: 1;
         grid-template-rows: auto;
     }
-   
-    .content-steps, .steps-body{
+
+    .content-steps,
+    .steps-body {
         grid-column: 1 / -1;
         grid-row: auto;
     }
 
-    .panel1{
+    .panel1 {
         height: auto;
         padding-bottom: 5rem;
     }
 
     .image-body img {
-    height:150px;
-    width: auto;
-    border-radius: 10px;
-}
+        height: 150px;
+        width: auto;
+        border-radius: 10px;
+    }
 
 
 }
