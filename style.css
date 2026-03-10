@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
     user-select: none;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body{
@@ -272,6 +273,11 @@ header {
     grid-row-start: 4;
 }
 
+.content11{
+    grid-column-start: 1;
+    grid-row-start: 5;
+    grid-column: span 3 / span 3;
+}
 
 
 
@@ -853,9 +859,13 @@ P {
         display: flex;
     }
 
+    .list{
+        width: 100%;
+    }
+
     .signup{
         display: flex;
-        width: 290px;
+        width: 100%;
         padding: 0.8rem;
         border-radius: 10px;
         background-color: #000;
@@ -863,9 +873,7 @@ P {
     }
 
     .close {
-        position: fixed;
-        top: 3%;
-        left: 4%;
+        padding: 0.8rem;
         transition: transform 0.5s ease;
     }
 
@@ -875,7 +883,7 @@ P {
         transform: translateX(100%);
         right: 0;
         top: 0;
-        height: 100%;
+        height: 100vh;
         width: 80%;
         z-index: 999999;
         visibility: hidden;
@@ -899,8 +907,7 @@ P {
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-        margin-top: 5rem;
-        padding-left: 1rem;
+        padding: 1rem;
     }
 
     .sidebar .navlinks .list {
@@ -909,17 +916,27 @@ P {
         gap: 20px;
     }
 
-    .sidebar .navlinks .list li {
+    .sidebar .navlinks .list li{
         list-style: none;
+        padding: 0.8rem;
+        border-radius: 10px;
     }
 
-    .sidebar .navlinks .list li a {
+    .sidebar .navlinks .list li:hover{
+        background-color: #000;
+        color: white;
+    }
+
+    .sidebar .navlinks .list a {
         text-decoration: none;
         font-family: "Krona One", sans-serif;
         font-size: 0.8rem;
-        color: #000;
+        color: #000000;
     }
 
+     .sidebar .navlinks .list li a:hover{
+        color: white;
+     }
 
     .header-body .logo svg {
         display: none;

@@ -30,14 +30,23 @@
 const humberger = document.getElementById("humberger")
 const sidebar = document.getElementById("sidebar")
 const closebtn = document.getElementById("close")
+const removes = document.querySelectorAll(".list a")
 
 
-humberger.addEventListener("click", ()  => {
+humberger.addEventListener("click", () => {
     sidebar.classList.add("open")
     document.body.classList.add("no-scroll")
 })
 
-closebtn.addEventListener("click", ()  => {
+closebtn.addEventListener("click", () => {
     sidebar.classList.remove("open")
-        document.body.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll");
 })
+
+removes.forEach(element => {
+    element.addEventListener("click", () => {
+        sidebar.classList.remove("open")
+        document.body.classList.remove("no-scroll");
+    })
+});
+
