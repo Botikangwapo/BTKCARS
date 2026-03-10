@@ -11,6 +11,16 @@ body {
     scroll-behavior: smooth;
 }
 
+body{
+    height: 100vh;
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+
+
 header {
     position: fixed;
     width: 100%;
@@ -62,8 +72,8 @@ header {
 }
 
 .humberger span {
-    height: 30px;
-    width: 4px;
+    height: 25px;
+    width: 2px;
     background-color: #000;
 }
 
@@ -761,8 +771,7 @@ P {
 /* MOBILE */
 @media (max-width: 600px) {
 
-    .header-body nav ul,
-    button {
+    .header-body nav ul, .signup{
         display: none;
     }
 
@@ -844,10 +853,20 @@ P {
         display: flex;
     }
 
+    .signup{
+        display: flex;
+        width: 290px;
+        padding: 0.8rem;
+        border-radius: 10px;
+        background-color: #000;
+        color: #e6e6e6;
+    }
+
     .close {
         position: fixed;
         top: 3%;
         left: 4%;
+        transition: transform 0.5s ease;
     }
 
     .sidebar {
@@ -863,6 +882,7 @@ P {
         align-items: flex-start;
         justify-content: flex-start;
         background-color: #ffffff;
+        box-shadow: 10px 0 20px rgba(0,0,0,0.3);
         transition: transform 0.5s ease;
         border-radius: 10px 0px 0px 10px;
     }

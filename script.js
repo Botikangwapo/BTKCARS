@@ -31,10 +31,13 @@ const humberger = document.getElementById("humberger")
 const sidebar = document.getElementById("sidebar")
 const closebtn = document.getElementById("close")
 
+
 humberger.addEventListener("click", ()  => {
     sidebar.classList.add("open")
+    document.body.classList.add("no-scroll")
 })
 
 closebtn.addEventListener("click", ()  => {
     sidebar.classList.remove("open")
+        document.body.classList.remove("no-scroll");
 })
